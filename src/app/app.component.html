@@ -1,1 +1,21 @@
-<h1>Dynamic Component Loader</h1>
+<mat-drawer-container class="dcontainer" autosize>
+  <mat-toolbar>
+    <button type="button" mat-button class="menu-icon" aria-label="Menu button" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Dynamic Content Loader</span>
+    <div class="topbar-icons">
+      <button class="menu-icon" mat-button [matMenuTriggerFor]="roleMenu">
+        <mat-icon>account_circle</mat-icon>
+        <mat-menu #roleMenu>
+          <button mat-menu-item>Role 1</button>
+          <button mat-menu-item>Role 2</button>
+        </mat-menu>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-drawer  class="sidebar" #drawer mode="side" opened>
+    <h2 class="title">Role Menu</h2>
+  </mat-drawer>
+</mat-drawer-container>
